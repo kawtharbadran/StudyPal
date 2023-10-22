@@ -1,3 +1,7 @@
+"""
+Utilities for Vertex AI
+"""
+
 # Utils
 import time
 from typing import List
@@ -7,6 +11,7 @@ from typing import Optional
 import langchain
 from pydantic import BaseModel
 
+# just for documentation purposes
 print(f"LangChain version: {langchain.__version__}")
 
 # Vertex AI
@@ -16,37 +21,15 @@ from langchain.embeddings import VertexAIEmbeddings
 from langchain.llms import VertexAI
 from langchain.schema import HumanMessage, SystemMessage
 
+# just for documentation purposes
 print(f"Vertex AI SDK version: {aiplatform.__version__}")
 
-
-
+# Initialize Vertex AI
 PROJECT_ID = ""
 LOCATION = "us-central1"
 
 import vertexai
-x = vertexai.init(project=PROJECT_ID, location=LOCATION)
-
-# def init_sample(
-#     project: Optional[str] = None,
-#     location: Optional[str] = None,
-#     experiment: Optional[str] = None,
-#     staging_bucket: Optional[str] = None,
-#     credentials: Optional[auth_credentials.Credentials] = None,
-#     encryption_spec_key_name: Optional[str] = None,
-#     service_account: Optional[str] = None,
-# ):
-    
-#     from google.cloud import aiplatform
-
-#     aiplatform.init(
-#         project=project,
-#         location=location,
-#         experiment=experiment,
-#         staging_bucket=staging_bucket,
-#         credentials=credentials,
-#         encryption_spec_key_name=encryption_spec_key_name,
-#         service_account=service_account,
-#     )
+vertexai.init(project=PROJECT_ID, location=LOCATION)
 
 # Utility functions for Embeddings API with rate limiting
 def rate_limit(max_per_minute):
@@ -63,6 +46,7 @@ def rate_limit(max_per_minute):
             time.sleep(sleep_time)
 
 
+# Configurations for Vertex AI Embeddings
 class CustomVertexAIEmbeddings(VertexAIEmbeddings, BaseModel):
     requests_per_minute: int
     num_instances_per_batch: int
@@ -86,7 +70,7 @@ class CustomVertexAIEmbeddings(VertexAIEmbeddings, BaseModel):
 
         return [r.values for r in results]
     
-    # Utility functions for Embeddings API with rate limiting
+ # Utility functions for Embeddings API with rate limiting
 def rate_limit(max_per_minute):
     period = 60 / max_per_minute
     print("Waiting")
