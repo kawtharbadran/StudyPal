@@ -20,7 +20,7 @@ print(f"Vertex AI SDK version: {aiplatform.__version__}")
 
 
 
-PROJECT_ID = "badran-3660-f23"
+PROJECT_ID = ""
 LOCATION = "us-central1"
 
 import vertexai
