@@ -18,3 +18,7 @@ https://cloud.google.com/vertex-ai/docs/workbench/reference/authentication#clien
 PACKAGES:
 Make sure you install the required packages from requirements.txt.
 After creating and activating venv, run this command:  pip install -r requirements.txt 
+
+BEFORE RUNNING:
+Change the vector_save_directory to where you want to save your PDF data.
+Change the project ID to your own account on which you got authenticated.
