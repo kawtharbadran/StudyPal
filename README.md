@@ -3,7 +3,8 @@ Study Pal to help with studying, because misery loves company. :')
 Have Python already installed with this. Python 3.11.4 was used for this project.
 
 SOURCE:
-https://github.com/GoogleCloudPlatform/generative-ai/blob/main/language/orchestration/langchain/intro_langchain_palm_api.ipynb
+https://github.com/GoogleCloudPlatform/generative-ai/blob/main/language/orchestration/langchain/intro_langchain_palm_api.ipynb 
+https://github.com/themlguy-tf/generative-ai/blob/main/%233b_%5BNJ%5D_UseCases-PDF%2C%20Sequential%20%26%20Summarization_LangChain_%26_GCP_PaLM_.ipynb
 
 VENV:
 First, create an empty folder that will be your working folder. Open it with Visual Studio.
